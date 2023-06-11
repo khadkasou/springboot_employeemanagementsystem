@@ -1,0 +1,37 @@
+<div th:replace="/headerAdmin :: headerAdmin"> </div>
+
+<!--Main Content Goes Here -->
+
+
+
+
+
+<div class="container">
+    <h1>Attendance List</h1>
+    <table class="table table-responsive table-bordered" id="example2">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Date</th>
+            <th>Status</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="list:${attendanceList}">
+            <td th:text="${list.id}"></td>
+            <td th:text="${list.username}"></td>
+            <td th:text="${list.date}"></td>
+            <td th:text="${list.status}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<div th:replace="/footer :: footer"> </div>

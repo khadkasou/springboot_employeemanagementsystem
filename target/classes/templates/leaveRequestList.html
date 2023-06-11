@@ -1,0 +1,46 @@
+<div th:replace="/headerAdmin :: headerAdmin"> </div>
+
+<!--Main Content Goes Here -->
+<div class="container">
+    <h1>List Of Employee</h1>
+
+    <table class="table table-responsive table-bordered" id="example2">
+        <thead class="bg-primary text-white">
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>Leave Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="list:${requestList}">
+            <td th:text="${list.id}"></td>
+            <td th:text="${list.username}"></td>
+            <td th:text="${list.reason}"></td>
+            <td th:text="${list.status}"></td>
+            <td th:text="${list.fromDate}"></td>
+            <td th:text="${list.toDate}"></td>
+            <td th:text="${list.leaveType}"></td>
+
+<!--            <td>-->
+<!--                <div class="d-flex justify-between gap-2">-->
+<!--                    <a th:href="@{/v2/employee/{id}(id=${list.id})}"><i class="fa-solid fa-trash"></i></a>-->
+<!--                    <a th:href="@{/v2/employee/update/{id}(id=${list.id})}"><i class="fa-solid fa-pencil"></i></a>-->
+<!--                </div>-->
+<!--            </td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+
+<div th:replace="/footer :: footer"> </div>
+
+

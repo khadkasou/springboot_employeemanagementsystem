@@ -1,0 +1,57 @@
+<div th:replace="/headerEmployee :: headerEmployee"> </div>
+
+<!--Main Content Goes Here -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Leave Form</h1>
+
+      <br>
+      <br>
+
+      <form th:action="@{/v2/employee/create-leave-request}" method="post" th:object="${leaveRequest}">
+
+        <div class="form-group">
+          <label class="control-label" for="username">Username</label>
+          <input id="username" class="form-control" th:field="*{username}"
+                required autofocus="autofocus" />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="reason">Reason of Leave</label>
+          <input id="reason" class="form-control" th:field="*{reason}"
+                 required autofocus="autofocus" />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="dateInput"> Start Date </label>
+          <input id="dateInput" type="date" class="form-control" th:field="*{fromDate}"
+                 required autofocus="autofocus"/>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="dateInput"> End Date </label>
+          <input id="date" type="date" class="form-control" th:field="*{toDate}"
+                 required autofocus="autofocus"/>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="leaveType">Leave Type</label>
+          <input id="leaveType" class="form-control" th:field="*{leaveType}"
+                 autofocus="autofocus" />
+        </div>
+        <br>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div th:replace="/footer :: footer"> </div>

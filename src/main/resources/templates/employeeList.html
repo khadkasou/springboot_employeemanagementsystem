@@ -1,0 +1,50 @@
+<div th:replace="/headerAdmin :: headerAdmin"> </div>
+
+<!--Main Content Goes Here -->
+<div class="container">
+<h1>List Of Employee</h1>
+
+    <table class="table table-responsive table-bordered" id="example2">
+        <thead class="bg-primary text-white">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="list:${employeeList}">
+            <td th:text="${list.id}"></td>
+            <td th:text="${list.firstName}"></td>
+            <td th:text="${list.lastName}"></td>
+            <td th:text="${list.age}"></td>
+            <td th:text="${list.email}"></td>
+            <td th:text="${list.phone}"></td>
+            <td th:text="${list.username}"></td>
+            <td th:text="${list.role}"></td>
+            <td th:text="${list.departments}"></td>
+            <td>
+                <div class="d-flex justify-between gap-2">
+                    <a th:href="@{/v2/employee/{id}(id=${list.id})}"><i class="fa-solid fa-trash"></i></a>
+                    <a th:href="@{/v2/employee/update/{id}(id=${list.id})}"><i class="fa-solid fa-pencil"></i></a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+
+<div th:replace="/footer :: footer"> </div>
+
+
